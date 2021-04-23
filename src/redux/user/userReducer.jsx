@@ -11,6 +11,7 @@ import {
   }
   
   const reducer = (state = initialState, action) => {
+    console.log(state)
     switch (action.type) {
       case FETCH_USERS_REQUEST:
         return {
@@ -18,6 +19,7 @@ import {
           loading: true
         }
       case FETCH_USERS_SUCCESS:
+        console.log(state)
         return {
           loading: false,
           users: action.payload,

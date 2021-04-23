@@ -9,7 +9,12 @@ export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest())
     axios
-      .get('https://jsonplaceholder.typicode.com/users')
+      .get('https://api.giphy.com/v1/gifs/trending', {
+         params: {
+            api_key: "tAEFUgagRjRNkU24orQdFB8EHMcNTUSe",
+            limit: 100
+          }
+      })
       .then(response => {
         // response.data is the users
         const users = response.data
